@@ -1,0 +1,89 @@
+.loginOuter{
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://wallpapercave.com/wp/Cr2viQw.jpg");
+    background-size: cover;
+    
+}
+.loginInner{
+    overflow: hidden;
+    width: 50%;
+    min-height: 500px;
+    display: flex;
+    border-radius: 8px;
+    
+}
+.left{
+    flex: 1;
+    /* background-image: url("https://motionarray.imgix.net/preview-327285-y73SJrkbb1-high_0008.jpg"); */
+    background-image: url("https://th.bing.com/th/id/OIP.uVfsB1twhkFEqTSwpEhYYAHaEK?pid=ImgDet&rs=1");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    color: #fff;
+}
+.left h1{
+    font-size: 65px;
+}
+.left span{
+    font-style: italic;
+    margin-bottom: 10px;
+}
+.right{
+    flex: 1;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.input{
+    border: none;
+    border-bottom: 1.5px solid #555;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.input:focus{
+    outline: none;
+}
+.btn{
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(69, 156, 69);
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.btn:hover{
+    transform: scale(1.02);
+}
+@media (max-width:550px){
+    .loginOuter{
+
+    }
+    .loginInner{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        /* min-height: 200px; */
+    }
+    .left h1{
+        font-size: 25px;
+    }
+}
+@media(max-width:950px){
+    .loginInner{
+        width: 80%;
+    }
+}
