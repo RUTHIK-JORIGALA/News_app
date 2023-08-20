@@ -9,6 +9,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import { NewsContext } from './context/NewsContext'
 
 import NewsDetails from './components/newsDetails/NewsDetails';
+import Contact from './pages/contact/Contact';
 function App() {
   const newsContext = useContext(NewsContext);
   const {loggedIn} = newsContext;
@@ -17,7 +18,9 @@ function App() {
       <BrowserRouter>
       <Topbar />
       <Routes>
-        <Route path='/' element={<NewsFeed />}/>
+        <Route path='/' element={<Login/>}/>
+        <Route path='/home' element={<NewsFeed />}/>
+        <Route path='/contact' element={<Contact/>}/>
         <Route path='login' element={<Login/>}/>
         <Route path='register' element={<Register/>}></Route>
         <Route path='/newsDetails/:id' element={<NewsDetails />}/>

@@ -6,7 +6,9 @@ const NewsContext = createContext();
 const initialState = {
     newsData:[],
     loggedIn:true,
-    detailsPageOpen:false
+    detailsPageOpen:false,
+    title:"Sunny NEWS",
+    userRegistredDetails:[]
     
 }
 const allNews  = news.news;
@@ -44,18 +46,23 @@ const NewsProvider = ({children}) =>{
       }
       const handleDetailsPageOpen  = () =>{
         dispatch({type:'SET_DETAILSPAGEOPEN'})
-        console.log("open")
+
       }
       const handleDetailsPageClose  = () =>{
         dispatch({type:'SET_DETAILSPAGECLOSE'})
-        console.log("close")
+
+      }
+      const handleFooterAlert = (name) =>{
+        alert(`You are trying to access ${name} page`)
       }
 
-
+      const registrationDetails = () =>{
+        
+      }
 
     return(
         
-        <NewsContext.Provider value={{...state, handleBusiness , handleHome , handleEducation ,handleSports , handleSearch ,handleLogOut, handleLogIn , handleDetailsPageOpen, handleDetailsPageClose}}>
+        <NewsContext.Provider value={{...state, handleBusiness , handleHome , handleEducation ,handleSports , handleSearch ,handleLogOut, handleLogIn , handleDetailsPageOpen, handleDetailsPageClose , handleFooterAlert}}>
             {children}
         </NewsContext.Provider>
     )

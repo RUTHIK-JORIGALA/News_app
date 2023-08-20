@@ -47,6 +47,7 @@ const NewsReducer = (state, action) =>{
                     ...state,
                     detailsPageOpen:false,
                 }
+            
             default :
                 return state
     }

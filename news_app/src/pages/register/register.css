@@ -7,7 +7,7 @@
     align-items: center;
     background-image: url('https://wallpapercave.com/wp/Cr2viQw.jpg');
     background-size: cover;
-    /* position: fixed; */
+
 }
 .registerInner{
     overflow: hidden;
@@ -15,6 +15,7 @@
     min-height: 500px;
     display: flex;
     border-radius: 8px;
+    
     
 }
 .left{
@@ -73,10 +74,16 @@
         display: flex;
         flex-direction: column;
         width: 80%;
+        height: 70%;
     }
     .left h1{
-        font-size: 25px;
+        font-size: 18px;
+        text-align: center;
     }
+    .right,input{
+        font-size: 0.8rem;
+    }
+    
 }
 @media(max-width:950px){
     .registerInner{

@@ -21,7 +21,7 @@ function Login() {
                 <input type="text" className="input" placeholder='Username'/>
                 <input type="password" className="input" placeholder='password'/>
             </form>
-            <button className="btn" onClick={handleLogIn}><Link to='/' className='link'>Login</Link></button>
+            <button className="btn" onClick={handleLogIn}><Link to='/home' className='link'>Login</Link></button>
         </div>
       </div>
     </div>

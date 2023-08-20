@@ -9,7 +9,7 @@ function Register() {
         <div className="right">
             <h1>Register</h1>
             <form action="submit" className="form">
-                <input type="text" className="input" placeholder='Username'/>
+                <input type="text" className="input" placeholder='Username' />
                 <input type="text" className="input" placeholder='Fullname'/>
                 <input type="email" className="input" placeholder='email'/>
                 <input type="password" className="input" placeholder='password'/>

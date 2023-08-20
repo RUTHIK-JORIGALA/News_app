@@ -6,8 +6,8 @@ import { NewsContext } from '../../context/NewsContext'
 function Topbar() {
     const newsContext = useContext(NewsContext);
     // console.log(newsContext);
-    const {handleBusiness , handleEducation , handleHome , handleSports , handleSearch ,loggedIn, handleLogOut ,handleDetailsPageClose, detailsPageOpen} = newsContext;
-    console.log(detailsPageOpen)
+    const {handleBusiness , handleEducation , handleHome , handleSports , handleSearch ,loggedIn, handleLogOut ,handleDetailsPageClose, detailsPageOpen , title} = newsContext;
+
 
    if(!loggedIn){
     return <div></div>
@@ -15,13 +15,15 @@ function Topbar() {
    return (
     <div className='topbarOuter'>
         <div className="topbarInner">
-            <Link className='link' to='/' onClick={handleDetailsPageClose}><h3 className='NewsTitle'>Daily BUZZ</h3></Link>
+            <Link className='link' to='/home' onClick={handleDetailsPageClose}><h3 className='NewsTitle'>{title}</h3></Link>
+            {detailsPageOpen && <Link className='link' to='/home' onClick={handleDetailsPageClose}><h3 className='NewsTitle'>Home</h3></Link>}
+
             {!detailsPageOpen && (
               <div className='topbar-filters'>
                 <div className='categories'>
-                  <span onClick={handleHome}><Link to='/' className='link' >Home</Link></span><span>|</span>
+                  <span onClick={handleHome}><Link to='/home' className='link' >Home</Link></span><span>|</span>
                   <span onClick={handleSports}>Sports</span> |
-                  <div onClick={handleEducation}>Education</div>|
+                  <span onClick={handleEducation}>Education</span>|
                   <span onClick={handleBusiness}>Business</span>  
                 </div>
               

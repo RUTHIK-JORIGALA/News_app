@@ -3,6 +3,8 @@
   margin: 0;
   margin-bottom: 3px;
   box-shadow:0 3px 4px ;
+  position: sticky;
+  top: 0;
 }
 .topbarInner{
   display: flex;
@@ -17,16 +19,19 @@
   color: antiquewhite;
   letter-spacing: 1.2px;
 }
+h3.NewsTitle{
+  margin: 0;
+}
 .NewsTitle:hover{
   cursor: pointer;
 }
 .categories{
   color: aliceblue;
-  display: flex;
+  display: inline-flex;
   gap: 20px;
   
 }
-.categories:hover{
+.categories span:hover{
   cursor: pointer;
 }
 .search{
@@ -48,6 +53,7 @@
 .topbar-filters{
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 2rem;
 }
 .logout{
@@ -67,42 +73,19 @@
 text-decoration: none;
 }
 
-@media screen and (max-width:550px) {
-  
-  .topbarInner{
-    padding: 0;
-  }
- 
-  .categories{
-    gap: 0.5rem;
-    font-size: 0.8rem;
-  }
-  .NewsTitle{
-    width: 20px;
-    font-size: 15px;
-    padding: 0;
-    margin: 0;
-  }
-  .topbarInner{
-    padding: 2px 4px;
-  }
-  .logout span{
-    display: none;
-  }
-  .topbar-filters{
-    display: flex;
-    flex-direction: column;
-  }
-  .searchInput{
-    font-size: 0.7rem;
-  }
-}
 @media(max-width:900px){
   .topbarOuter{
     height: 80px;
   }
   .topbarInner{
     padding: 2px 4px;
+    height: 45px;
+    
+  }
+  h3.NewsTitle{
+    height: 100%;
+    display: flex;
+    align-self: center;
   }
   .search{
     width: 80%;
@@ -112,12 +95,60 @@ text-decoration: none;
     transform: translate(-50%, 80%);
     
   }
+  .searchInput{
+    font-size: 0.8rem;
+    padding: 0;
+  }
   .topbar-filters{
     position: relative;
   }
 }
+@media(max-width:550px) {
+  
+  .topbarInner{
+    padding: 0;
+    
+  }
+ 
+  .categories{
+    gap: 0.5em;
+    font-size: 0.8em;
+  }
+  
+  h3.NewsTitle{
+    width: 20px;
+    font-size: 15px;
+    padding: 2px;
+    margin: 0;
+    width: 50px;
+    
+    
+  }
+  .topbarInner{
+    /* padding: 2px 4px; */
+    padding: 0;
+    
+  }
+  .logout span{
+    display: none;
+  }
+  .topbar-filters{
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .searchInput{
+    font-size: 0.7rem;
+  }
+  .categories span{
+    background-color: transparent!important;
+    cursor: pointer;
+
+  }
+}
+
 @media screen and (max-width:350px){
-  .NewsTitle{
+  h3.NewsTitle{
     width: 15px;
     font-size: 10px;
     
