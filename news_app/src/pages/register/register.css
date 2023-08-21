@@ -83,6 +83,16 @@
     .right,input{
         font-size: 0.8rem;
     }
+    .input{
+        width: 100%;
+    }
+    .right>h1{
+        font-size: 1rem;
+    }
+    .btn{
+        font-size: 0.8em;
+        padding: 5px 10px;
+    }
     
 }
 @media(max-width:950px){

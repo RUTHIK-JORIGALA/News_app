@@ -1,20 +1,21 @@
 import { createContext, useEffect, useReducer , } from "react";
 import reducer from '../reducer/NewsReducer'
 import news from '../data.json'
+import { useNavigate } from "react-router-dom";
 const NewsContext = createContext();
 
 const initialState = {
     newsData:[],
-    loggedIn:true,
+    loggedIn:false,
     detailsPageOpen:false,
     title:"Sunny NEWS",
-    userRegistredDetails:[]
+    userRegistred:[]
     
-}
+  }
+
 const allNews  = news.news;
 const NewsProvider = ({children}) =>{
     const [state , dispatch ] = useReducer(reducer , initialState)
-
     useEffect(()=>{
         dispatch({type:'SET_API_DATA',payload:allNews})
     },[])
@@ -40,9 +41,11 @@ const NewsProvider = ({children}) =>{
       }
       const handleLogIn = () =>{
         dispatch({type:'SET_LOGIN'})
+
       }
       const handleLogOut = () =>{
-        dispatch({type:'SET_LOGOUT'})
+        dispatch({type:'SET_LOGOUT'});
+
       }
       const handleDetailsPageOpen  = () =>{
         dispatch({type:'SET_DETAILSPAGEOPEN'})
@@ -59,10 +62,11 @@ const NewsProvider = ({children}) =>{
       const registrationDetails = () =>{
         
       }
+      
 
     return(
         
-        <NewsContext.Provider value={{...state, handleBusiness , handleHome , handleEducation ,handleSports , handleSearch ,handleLogOut, handleLogIn , handleDetailsPageOpen, handleDetailsPageClose , handleFooterAlert}}>
+        <NewsContext.Provider value={{...state, handleBusiness , handleHome , handleEducation ,handleSports , handleSearch ,handleLogOut, handleLogIn , handleDetailsPageOpen, handleDetailsPageClose , handleFooterAlert }}>
             {children}
         </NewsContext.Provider>
     )

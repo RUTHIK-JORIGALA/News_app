@@ -31,10 +31,12 @@
 }
 .left h1{
     font-size: 65px;
+    text-align: center;
 }
 .left span{
     font-style: italic;
     margin-bottom: 10px;
+    text-align: center;
 }
 .right{
     flex: 1;
